@@ -4,13 +4,20 @@ import time
 import random
 if __name__ == "__main__":
     print("Running main.")
-    targetSite  = CheckArguments()
+    targetSite = CheckArguments()
     try:
-        MySession   = BrowserSession.BrowserSession(targetSite)
-        MySession.StartSession()
-        while (true):
-            randomTime = random.randomrange(1,60)
-            MySession.BeginClicking("randomize-button")
+        cycles     = 0 
+        MySession  = BrowserSession.BrowserSession(targetSite)
+        MySession.EstablishSessionDriver(MySession.GetTargetBrowser())
+        MySession.HeadToTargetSite()
+        MySession.PrintTitle()
+        while (True):
+            randomTime = random.randint(1,10)
+            print("time: ", randomTime)
+            MySession.BeginClicking()
             time.sleep(randomTime)
+            print("Cycle completed", cycles)
+            cycles += 1
     except Exception as error:
+        print(error)
         print("\nSession cannot start.\n")

@@ -41,9 +41,8 @@ class BrowserSession:
         self.sessionDriver.implicitly_wait(0.5)
         element.click()
     def StartSession(self):
-        self.EstablishSessionDriver()
+        self.EstablishSessionDriver(self.GetTargetBrowser())
         self.HeadToTargetSite()
-        self.sessionDriver.implicitly_wait(0.5)
         self.PrintTitle()
     def BeginClicking(self, targetElement:str="randomize-button"):
         sessionElement = self.FindElementByClass(targetElement)
