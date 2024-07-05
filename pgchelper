@@ -1,0 +1,16 @@
+from helpers import *
+import BrowserSession as BrowserSession
+import time
+import random
+if __name__ == "__main__":
+    print("Running main.")
+    targetSite  = CheckArguments()
+    try:
+        MySession   = BrowserSession.BrowserSession(targetSite)
+        MySession.StartSession()
+        while (true):
+            randomTime = random.randomrange(1,60)
+            MySession.BeginClicking("randomize-button")
+            time.sleep(randomTime)
+    except Exception as error:
+        print("\nSession cannot start.\n")
