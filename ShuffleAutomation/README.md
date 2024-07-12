@@ -38,7 +38,7 @@ PGCHelper uses the Selenium library and is written in Python3.
 | Firefox      | Working                       |
 | Safari       | Working                       |
 | Chrome       | Working                       |
-| Edge         | Not Tested                    |
+| Edge         | Working                       |
 
 ## References
 * [Selenium Documentation](https://www.selenium.dev/documentation/)
